@@ -1,0 +1,41 @@
+<div id="photo-list">
+  <h2>
+    <strong>
+      {{ 'Photos' | translate }}
+    </strong>
+  </h2>
+
+  <div id="photo-sort" class="text-right">
+    <ul class="list-inline">
+      <li ng-class="{active: vm.order === 'name'}">
+        <button ng-click="vm.setOrder('name')">{{ 'Name' | translate }}</button>
+      </li>
+      <li ng-class="{active: vm.order === 'size'}">
+        <button ng-click="vm.setOrder('size')">{{ 'Size' | translate }}</button>
+      </li>
+      <li ng-class="{active: vm.order === 'modified'}">
+        <button ng-click="vm.setOrder('modified')">{{ 'Modified' | translate }}</button>
+      </li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="form-group"> 
+        <input type="text" name="search" id="inputSearch" class="form-control" ng-model="vm.search" placeholder="{{ 'Search' | translate }}...">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 img-item" ng-repeat="img in vm.images | orderBy: vm.order | filter: {name: vm.search}">
+      <img ng-src="{{img.url}}" height="200px" width="100%">
+      <p>
+        <span class="img-name">{{img.name}}</span>
+        <br>
+        <span class="img-size">{{img.size}} MB</span>
+      </p>
+    </div>
+  </div>
+</div>

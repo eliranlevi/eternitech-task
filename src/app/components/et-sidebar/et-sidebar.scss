@@ -1,0 +1,36 @@
+#sidebar {
+  position: fixed;
+  z-index: 1;
+  width: 20%;
+  height: 100%;
+  background-color: #444;
+  padding: 10px 30px;
+
+  #sb-brand {
+    text-align: center;
+    padding: 5px 0;
+    color: #fff;
+  }
+
+  #sb-list {
+    li {
+      margin-bottom: 5px;
+
+      a {
+        color: #fff;
+      }
+
+      a:hover, a:focus {
+        color: #30baf4;
+        text-decoration: none;
+      }
+    }
+
+    li.active {
+      a {
+        @extend a:hover;
+        font-weight: bold;
+      }
+    }
+  }
+}
