@@ -1,3 +1,3 @@
-# Eternitech Task
+# Dropbox UI
 
-Dropbox UI with Angular.
+Dropbox UI - built with Angular.
