@@ -1,3 +1,3 @@
 # Dropbox UI
 
-Dropbox UI - built with Angular.
+Dropbox UI - built with AngularJS
